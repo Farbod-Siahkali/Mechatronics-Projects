@@ -1,0 +1,20 @@
+<launch>
+	<rosparam command="load" file="$(find myur5_moveit_config)/config/joint_names.yaml"/>
+	
+	<include file="$(find myur5_moveit_config)/launch/planning_context.launch">
+		<arg name="load_robot_description" value="true"/>
+	</include>
+	
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+		<param name="/use_gui" value="true"/>
+		<rosparam param="/source_list">[/joint_state]</rosparam>
+	</node>
+	
+	<include file="$(find myur5_moveit_config)/launch/move_group.launch">
+		<arg name="publish_monitored_planning_scene" value="true"/>
+	</include>
+	
+	<include file="$(find myur5_moveit_config)/launch/moveit_rviz.launch">
+		<arg name="rviz_config" value="$(dirname)/moveit.rviz"/>
+	</include> 
+</launch>

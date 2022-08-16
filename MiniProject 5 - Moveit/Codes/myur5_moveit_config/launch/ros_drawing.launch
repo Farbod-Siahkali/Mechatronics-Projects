@@ -1,0 +1,10 @@
+<launch>
+
+	<include file="$(find ur_gazebo)/launch/ur5.launch">
+    	</include>
+    	
+	<include file="$(find myur5_moveit_config)/launch/myur5_planning_execution.launch">	</include>
+	
+	<!-- python_interface -->
+	<node name="script_py" pkg="myur5_moveit_config" type="python_interface.py" output="screen"/>
+</launch>

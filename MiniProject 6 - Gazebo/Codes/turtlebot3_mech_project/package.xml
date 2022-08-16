@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>turtlebot3_mech_project</name>
+  <version>1.3.2</version>
+  <description>
+    Mechatronics Project With Turtlebot3
+  </description>
+  <license>Apache 2.0</license>
+  <author> </author>
+  <maintainer email="test@abc.com"> Me </maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf</depend>
+  <depend>gazebo_ros</depend>
+  <exec_depend>gazebo</exec_depend>
+  <exec_depend>turtlebot3_description</exec_depend>
+  <export>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+  </export>
+</package>
